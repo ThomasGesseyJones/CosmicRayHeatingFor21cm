@@ -1,11 +1,11 @@
-===========================
-Cosmic Ray Heating For 21cm
-===========================
+=======================================
+Cosmic Ray Heating For 21cm Simulations
+=======================================
 
 Overview
 --------
 
-:Repository: Cosmic Ray Heating For 21cm
+:Repository: Cosmic Ray Heating For 21cm Simulations
 :Author: Thomas Gessey-Jones
 :Homepage:  https://github.com/ThomasGesseyJones/CosmicRayHeatingFor21cm
 :Paper: https://arxiv.org/abs/2304.07201
@@ -21,11 +21,9 @@ The code was developed to be integrated into the semi-numerical 21-cm signal sim
 and `Reis et al. (2020) <https://ui.adsabs.harvard.edu/abs/2020MNRAS.499.5993R/abstract>`__
 (for access to this simulation code please contact Anastasia Fialkov at
 `anastasia.fialkov@gmail.com <mailto:anastasia.fialkov@gmail.com>`__).
-However, this cosmic ray heating code can operate standalone, and can be used to produce the heating window functions
-for any semi-numerical 21-cm simulation code.
+However, this cosmic ray heating code can operate standalone, and so could be used to integrate cosmic ray heating
+into any grid-based semi-numerical 21-cm simulation code.
 Hence, it is made available here for the community to use.
-For access to this simulation code please contact Anastasia Fialkov at
-`anastasia.fialkov@gmail.com <mailto:anastasia.fialkov@gmail.com>`__.
 
 
 Code Structure
@@ -36,17 +34,17 @@ The code is split into four files:
 - `cosmic_ray_general.py` which contains the general functions used to calculate the heating window functions and
   heating coefficients. Most of these functions are either approximate analytic solutions to the cosmic ray energy
   equation (paper equation 25) or the comoving path length equation (paper equation 26).
-- `cosmic_ray_coeffs.py` which contains the functions used to calculate the heating coefficients which describe the
-  rate of cosmic ray heating around a point source. This coefficients are calculated on an adaptive redshift grid
+- `cosmic_ray_coeffs.py` which contains the functions used to calculate the heating coefficients that describe the
+  rate of cosmic ray heating by a source. These coefficients are calculated on an adaptive redshift grid
   which will refine to ensure that the heating coefficients are calculated to a specified accuracy.
-- `cosmic_ray_window.py` which contains the functions used to calculate the heating window functions which describe the
+- `cosmic_ray_window.py` which contains the functions used to calculate the heating window functions that describe the
   distribution of cosmic ray heating around a point source. Near the point source these window functions are calculated
   on a higher resolution grid, that is then convolved with the possible point source positions to produce the heating
-  window functions.
+  window functions at the desired resolution.
 - `generate_cosmic_ray.py` acts as the main interface to the code, taking command line arguments to specify the
   cosmic ray spectrum to use and the type of window functions to produce. It is described in more detail below.
 
-It is intended to be used through the command line interface of `generate_cosmic_ray.py` which takes the following
+The code is intended to be used through the command line interface of `generate_cosmic_ray.py` which takes the following
 arguments:
 
 - path_to_storage: a string. The path of folder where window functions and coefficients are to be stored
@@ -77,20 +75,20 @@ at :math:`z` due to a source at :math:`z'`:
 
 where :math:`T` is the kinetic energy of cosmic ray protons at :math:`z`, :math:`T'` is the kinetic energy the cosmic
 ray proton would have needed to have had at :math:`z'` to have a kinetic energy of :math:`T` at :math:`z`,
-:math: `\frac{dN_{E}(T'[z', z, T])}{dT}` is the cosmic ray spectrum at :math:`z'` (normalized to
+:math:`\frac{dN_{E}(T'[z', z, T])}{dT}` is the cosmic ray emission spectrum at :math:`z'` (normalized to
 one unit of energy emission) and,
 :math:`\left.\frac{dE}{dz}\right|_{E\&I}(T)` is the energy deposition rate per redshift of a cosmic ray proton of
 kinetic energy :math:`T` at :math:`z` (see paper equation 4). :math:`\frac{dT'}{dT}` is a Jacobian factor which
 transforms from the cosmic ray energy at :math:`z` to the cosmic ray energy at :math:`z'`.
 
 The heating window functions :math:`W(\vec{x}, z, z')` are simply the distribution this energy deposition rate around a point source at
-:math:`z'`. Hence, vary with cosmic ray propagation mode (see paper section 3.3.2). The heating window functions are
+:math:`z'`. Hence, they vary with cosmic ray propagation mode (see paper section 3.3.2). The heating window functions are
 therefore probability distributions and so are normalized to one.
 
-Therefore the cosmic ray energy deposition rate into the IGM (not heating rate) is given by:
+Combining these we find the cosmic ray energy deposition rate into the IGM (not heating rate) is given by:
 
 .. math::
-    \left.\frac{dU}{dV dz}\right|_{cr}{(\vec{x}) =  \eta_{cr} \int C(z, z') (W(\vec{x}, z, z') \ast SFRD_{cr})(\vec{x}, z') dz'}
+    \left.\frac{dU}{dV dz}\right|_{cr}{(\vec{x}) =  \eta_{cr} \int C(z, z') (W(\vec{x}, z, z') \ast SFRD_{cr}(\vec{x}, z') )dz'}
 
 where :math:`\eta_{cr}` is the efficiency of cosmic ray emission and :math:`SFRD_{cr}` is the star
 formation (redshift) rate density of cosmic ray emitting sources (see paper section 3.3.1). This can then be converted to a heating
