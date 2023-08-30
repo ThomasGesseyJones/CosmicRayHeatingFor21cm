@@ -73,14 +73,15 @@ The heating coefficients are defined as the normalized rate of cosmic ray energy
 at :math:`z` due to a source at :math:`z'`:
 
 .. math::
-    C(z, z') =  \int_{0}^{\infty} dT \left(\left.\frac{dE}{dz}\right|{\rm E&I}(T) \frac{dN_{\rm source, E}(T'[z', z, T])}{dT} \frac{dT'}{dT} \right)
+    C(z, z') =  \int_{0}^{\infty} dT \left(\left.\frac{dE}{dz}\right|_{E\&I}(T) \frac{dN_{E}(T'[z', z, T])}{dT} \frac{dT'}{dT} \right)
 
 where :math:`T` is the kinetic energy of cosmic ray protons at :math:`z`, :math:`T'` is the kinetic energy the cosmic
 ray proton would have needed to have had at :math:`z'` to have a kinetic energy of :math:`T` at :math:`z`,
-:math: `\frac{dN_{\rm source, E}(T'[z', z, T])}{dT}` is the cosmic ray spectrum at :math:`z'` (normalized to
+:math: `\frac{dN_{E}(T'[z', z, T])}{dT}` is the cosmic ray spectrum at :math:`z'` (normalized to
 one unit of energy emission) and,
-:math:`\left.\frac{dE}{dz}\right|{\rm E&I}(T)` is the energy deposition rate per redshift of a cosmic ray proton of
-kinetic energy :math:`T` at :math:`z` (see paper equation 4).
+:math:`\left.\frac{dE}{dz}\right|_{E\&I}(T)` is the energy deposition rate per redshift of a cosmic ray proton of
+kinetic energy :math:`T` at :math:`z` (see paper equation 4). :math:`\frac{dT'}{dT}` is a Jacobian factor which
+transforms from the cosmic ray energy at :math:`z` to the cosmic ray energy at :math:`z'`.
 
 The heating window functions :math:`W(\vec{x}, z, z')` are simply the distribution this energy deposition rate around a point source at
 :math:`z'`. Hence, vary with cosmic ray propagation mode (see paper section 3.3.2). The heating window functions are
@@ -89,10 +90,10 @@ therefore probability distributions and so are normalized to one.
 Therefore the cosmic ray energy deposition rate into the IGM (not heating rate) is given by:
 
 .. math::
-    \left.\frac{dU}{dV dz}\right|_{\rm cr}{(\vec{x}) =  \eta_{\rm cr} \int C(z, z') (W(\vec{x}, z, z') \ast {\rm SFRD}_{\rm cr})(\vec{x}, z') dz'}
+    \left.\frac{dU}{dV dz}\right|_{ cr}{(\vec{x}) =  \eta_{ cr} \int C(z, z') (W(\vec{x}, z, z') \ast { SFRD}_{ cr})(\vec{x}, z') dz'}
 
-where :math:`\eta_{\rm cr}` is the efficiency of cosmic ray emission and :math:`{\rm SFRD}_{\rm cr}` is the star
-formation rate density of cosmic ray emitting sources (see paper section 3.3.1). This can then be converted to a heating
+where :math:`\eta_{ cr}` is the efficiency of cosmic ray emission and :math:`{ SFRD}_{ cr}` is the star
+formation (redshift) rate density of cosmic ray emitting sources (see paper section 3.3.1). This can then be converted to a heating
 rate by multiplying by the local heating efficiency (see paper section 3.3.3) and the local heat capacity of the IGM.
 
 
