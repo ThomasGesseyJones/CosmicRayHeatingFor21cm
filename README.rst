@@ -90,9 +90,9 @@ therefore probability distributions and so are normalized to one.
 Therefore the cosmic ray energy deposition rate into the IGM (not heating rate) is given by:
 
 .. math::
-    \left.\frac{dU}{dV dz}\right|_{ cr}{(\vec{x}) =  \eta_{ cr} \int C(z, z') (W(\vec{x}, z, z') \ast { SFRD}_{ cr})(\vec{x}, z') dz'}
+    \left.\frac{dU}{dV dz}\right|_{cr}{(\vec{x}) =  \eta_{cr} \int C(z, z') (W(\vec{x}, z, z') \ast SFRD_{cr})(\vec{x}, z') dz'}
 
-where :math:`\eta_{ cr}` is the efficiency of cosmic ray emission and :math:`{ SFRD}_{ cr}` is the star
+where :math:`\eta_{cr}` is the efficiency of cosmic ray emission and :math:`SFRD_{cr}` is the star
 formation (redshift) rate density of cosmic ray emitting sources (see paper section 3.3.1). This can then be converted to a heating
 rate by multiplying by the local heating efficiency (see paper section 3.3.3) and the local heat capacity of the IGM.
 
