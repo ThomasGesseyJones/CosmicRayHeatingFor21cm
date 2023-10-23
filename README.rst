@@ -8,12 +8,12 @@ Overview
 :Repository: Cosmic Ray Heating For 21cm Simulations
 :Author: Thomas Gessey-Jones
 :Homepage:  https://github.com/ThomasGesseyJones/CosmicRayHeatingFor21cm
-:Paper: https://arxiv.org/abs/2304.07201
+:Paper: https://ui.adsabs.harvard.edu/abs/2023MNRAS.526.4262G
 
 
 This repository contains the code used to produce the cosmic ray heating
 window functions and heating coefficients for the paper
-`Signatures of Cosmic Ray Heating in 21-cm Observables <https://ui.adsabs.harvard.edu/abs/2023arXiv230407201G/abstract>`__.
+`Signatures of Cosmic Ray Heating in 21-cm Observables <https://ui.adsabs.harvard.edu/abs/2023MNRAS.526.4262G>`__.
 
 The code was developed to be integrated into the semi-numerical 21-cm signal simulation code described in
 `Visbal et al. (2012) <https://ui.adsabs.harvard.edu/abs/2012Natur.487...70V/abstract>`__,
@@ -102,26 +102,28 @@ Licence and Citation
 The software is available on the MIT licence.
 
 If you use the code for academic purposes we request that you cite the following
-`paper <https://ui.adsabs.harvard.edu/abs/2023arXiv230407201G/abstract>`__.
+`paper <https://ui.adsabs.harvard.edu/abs/2023MNRAS.526.4262G>`__.
 
 .. code:: bibtex
 
-    @ARTICLE{2023arXiv230407201G,
+    @ARTICLE{2023MNRAS.526.4262G,
            author = {{Gessey-Jones}, T. and {Fialkov}, A. and {de Lera Acedo}, E. and {Handley}, W.~J. and {Barkana}, R.},
-            title = "{Signatures of Cosmic Ray Heating in 21-cm Observables}",
-          journal = {arXiv e-prints},
-         keywords = {Astrophysics - Cosmology and Nongalactic Astrophysics, Astrophysics - Astrophysics of Galaxies, Astrophysics - High Energy Astrophysical Phenomena},
+            title = "{Signatures of cosmic ray heating in 21-cm observables}",
+          journal = {\mnras},
+         keywords = {cosmic rays, dark ages, reionization, first stars, early Universe, cosmology: theory},
              year = 2023,
-            month = apr,
-              eid = {arXiv:2304.07201},
-            pages = {arXiv:2304.07201},
-              doi = {10.48550/arXiv.2304.07201},
+            month = dec,
+           volume = {526},
+           number = {3},
+            pages = {4262-4284},
+              doi = {10.1093/mnras/stad3014},
     archivePrefix = {arXiv},
            eprint = {2304.07201},
-     primaryClass = {astro-ph.CO},
-           adsurl = {https://ui.adsabs.harvard.edu/abs/2023arXiv230407201G},
+           adsurl = {https://ui.adsabs.harvard.edu/abs/2023MNRAS.526.4262G},
           adsnote = {Provided by the SAO/NASA Astrophysics Data System}
     }
+
+
 
 
 Requirements
